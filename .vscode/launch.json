@@ -11,7 +11,9 @@
 			"mode": "auto",
 			"program": "${workspaceFolder}/main.go",
 			"args": [
-				"import"
+				"import",
+				"-d",
+				"/Users/harrison/Library/Group Containers/JLMPQHK86H.com.culturedcode.ThingsMac/ThingsData-141V6/Things Database.thingsdatabase/main.sqlite"
 			]
 		}
 	]

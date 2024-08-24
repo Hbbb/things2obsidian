@@ -10,7 +10,7 @@ import (
 var importCmd = &cobra.Command{
 	Use: "import",
 	Run: func(cmd *cobra.Command, args []string) {
-		queries, db, err := NewDB()
+		queries, db, err := NewDB(databasePath)
 		if err != nil {
 			log.Fatalf("Failed to connect to the database: %v", err)
 		}
@@ -21,9 +21,8 @@ var importCmd = &cobra.Command{
 			log.Fatalf("Failed to get tasks: %v", err)
 		}
 
-		// TODO: Process tasks
 		for _, task := range tasks {
-			fmt.Printf("Title: %s, Notes: %s\n", task.Title, task.Notes)
+			fmt.Printf("- [ ] %s\n", task.Title.String)
 		}
 	},
 }
